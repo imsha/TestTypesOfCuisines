@@ -44,36 +44,23 @@ class CuisineController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Cuisine  $cuisine
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Cuisine $cuisine)
-    {
-        //
-    }
-
-    /**
-     * @param Request $request
      * @param Cuisine $cuisine
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit(Request $request, Cuisine $cuisine)
+    public function edit(Cuisine $cuisine)
     {
         $keywords = Keyword::all();
         return view('cuisine.edit', compact('cuisine', 'keywords'));
     }
 
     /**
-     * Update the specified resource in storage.
+     * @param CuisineCreate $request
+     * @param Cuisine       $cuisine
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Cuisine  $cuisine
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, Cuisine $cuisine)
+    public function update(CuisineCreate $request, Cuisine $cuisine)
     {
         $cuisine->name = $request->input('name');
         $cuisine->save();

@@ -4,7 +4,7 @@
 
         <div class="row">
             <div class="col">
-                <div class="float-end">
+                <div class="float-end" style="padding-right: 10px;">
                     <a href="{{route('cuisines.create')}}" class="btn btn-primary">Создать</a>
                 </div>
             </div>

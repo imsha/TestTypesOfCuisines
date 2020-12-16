@@ -29,11 +29,7 @@ class CuisineCreate extends FormRequest
                 'min:1',
                 'max:190',
             ],
-            'keywords' => [
-               'array',
-               'min:1',
-               'max:100',
-            ]
+            'keywords' => 'required|array|min:1'
         ];
     }
 }
