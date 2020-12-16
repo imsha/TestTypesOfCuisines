@@ -10,7 +10,7 @@
         <label for="input-keywords" class="form-label">Ключевые слова</label>
 
         <?php
-        $keywordIds = $cuisine->keywords->pluck('id')->all();
+        $keywordIds = old('keywords', $cuisine->keywords->pluck('id')->all());
         ?>
 
         <select name="keywords[]" class="form-control" id="input-keywords" multiple>
@@ -28,6 +28,7 @@
 
     <div class="mb-3">
         <input class="btn btn-primary" type="submit" value="Изменить"/>
+        <a class="btn btn-link" href="{{route('cuisines.index')}}">Назад</a>
     </div>
 </form>
 @endsection
